@@ -1,4 +1,4 @@
-package sample;
+package br.ufrpe.util.samples;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

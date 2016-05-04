@@ -1,4 +1,4 @@
-package sample;
+package br.ufrpe.util.samples;
 
 import java.util.HashSet;
 

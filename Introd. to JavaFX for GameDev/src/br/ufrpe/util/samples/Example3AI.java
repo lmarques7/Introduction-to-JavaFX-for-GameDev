@@ -1,5 +1,6 @@
-package sample;
+package br.ufrpe.util.samples;
 
+import br.ufrpe.util.AnimatedImage;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -10,14 +11,14 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 // Animation of Earth rotating around the sun. (Hello, world!)
-public class Example3 extends Application {
+public class Example3AI extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage theStage) {
-		theStage.setTitle("AnimationTimer Example");
+		theStage.setTitle("AnimatedImage Example");
 
 		Group root = new Group();
 		Scene theScene = new Scene(root);
@@ -32,6 +33,13 @@ public class Example3 extends Application {
 		Image sun = new Image("sun.png");
 		Image space = new Image("space.png");
 
+		AnimatedImage ufo = new AnimatedImage();
+		Image[] imageArray = new Image[6];
+		for (int i = 0; i < 6; i++)
+			imageArray[i] = new Image("ufo_" + i + ".png");
+		ufo.frames = imageArray;
+		ufo.duration = 0.100;
+
 		final long startNanoTime = System.nanoTime();
 
 		new AnimationTimer() {
@@ -41,13 +49,10 @@ public class Example3 extends Application {
 				double x = 232 + 128 * Math.cos(t);
 				double y = 232 + 128 * Math.sin(t);
 
-				// Clear the canvas
-				gc.clearRect(0, 0, 512, 512);
-
-				// background image clears canvas
 				gc.drawImage(space, 0, 0);
 				gc.drawImage(earth, x, y);
 				gc.drawImage(sun, 196, 196);
+				gc.drawImage(ufo.getFrame(t), 450, 25);
 			}
 		}.start();
 

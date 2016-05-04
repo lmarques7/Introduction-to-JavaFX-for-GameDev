@@ -1,4 +1,4 @@
-package sample;
+package br.ufrpe.util.samples;
 
 import br.ufrpe.util.Circle;
 import br.ufrpe.util.IntValue;
