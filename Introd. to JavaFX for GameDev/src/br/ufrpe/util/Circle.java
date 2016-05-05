@@ -18,7 +18,8 @@ public class Circle {
 
 	/**
 	 * Set radius to a new value
-	 * @param r The new radius
+	 * 
+	 * @param r  The new radius
 	 */
 	public void setRadius(double r) {
 		radius = r;
