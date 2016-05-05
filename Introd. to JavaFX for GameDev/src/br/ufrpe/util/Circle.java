@@ -28,7 +28,7 @@ public class Circle {
 	}
 
 	public double getRadius() {
-		return radius; 
+		return radius;
 	}
 
 	public boolean containsPoint(double x, double y) {
