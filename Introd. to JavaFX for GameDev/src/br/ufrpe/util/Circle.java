@@ -3,6 +3,7 @@ package br.ufrpe.util;
 import javafx.geometry.Point2D;
 
 public class Circle {
+    // javaFX Point2D
 	private Point2D center;
 	private double radius;
 
