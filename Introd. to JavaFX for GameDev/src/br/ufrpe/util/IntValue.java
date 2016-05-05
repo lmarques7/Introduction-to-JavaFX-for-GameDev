@@ -1,9 +1,9 @@
 package br.ufrpe.util;
 
 public class IntValue {
-	public int value;
+    public int value;
 
-	public IntValue(int i) {
-		value = i;
-	}
+    public IntValue(int i) {
+        value = i;
+    }
 }
