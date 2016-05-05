@@ -5,6 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.geometry.Rectangle2D;
 
 public class Sprite {
+	//Comentário desnecessário
 	private Image image;
 	private double positionX;
 	private double positionY;
