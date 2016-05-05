@@ -15,6 +15,10 @@ public class Circle {
 		center = new Point2D(x, y);
 	}
 
+	/**
+	 * Set radius to a new value
+	 * @param r The new radius
+	 */
 	public void setRadius(double r) {
 		radius = r;
 	}
