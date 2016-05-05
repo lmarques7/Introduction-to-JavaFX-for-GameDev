@@ -2,7 +2,6 @@ package br.ufrpe.util;
 
 import javafx.geometry.Point2D;
 
-// Represents a circle
 public class Circle {
 	private Point2D center;
 	private double radius;
@@ -16,11 +15,6 @@ public class Circle {
 		center = new Point2D(x, y);
 	}
 
-	/**
-	 * Set radius to a new value
-	 * 
-	 * @param r  The new radius
-	 */
 	public void setRadius(double r) {
 		radius = r;
 	}
