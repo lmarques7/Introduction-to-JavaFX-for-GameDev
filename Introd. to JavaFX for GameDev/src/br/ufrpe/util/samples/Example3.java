@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 // Animation of Earth rotating around the sun. (Hello, world!)
 public class Example3 extends Application {
+    private static final int STAGE_W = 512;
+    private static final int STAGE_H = 512;
+    
     public static void main(String[] args) {
         launch(args);
     }
@@ -23,7 +26,7 @@ public class Example3 extends Application {
         Scene theScene = new Scene(root);
         theStage.setScene(theScene);
 
-        Canvas canvas = new Canvas(512, 512);
+        Canvas canvas = new Canvas(STAGE_W, STAGE_H);
         root.getChildren().add(canvas);
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -47,7 +50,7 @@ public class Example3 extends Application {
                 // background image clears canvas
                 gc.drawImage(space, 0, 0);
                 gc.drawImage(earth, x, y);
-                gc.drawImage(sun, 196, 196);
+                gc.drawImage(sun, (STAGE_W/2)-(sun.getWidth()/2), (STAGE_H/2)-sun.getHeight()/2);
             }
         }.start();
 

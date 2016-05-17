@@ -58,7 +58,8 @@ public class Example3T extends Application {
                         // background image clears canvas
                         gc.drawImage(space, 0, 0);
                         gc.drawImage(earth, x, y);
-                        gc.drawImage(sun, 196, 196);
+                        gc.drawImage(sun, (canvas.getWidth()/2) - (sun.getWidth()/2), 
+                                (canvas.getHeight()/2) - (sun.getHeight()/2));
                     }
                 });
 
