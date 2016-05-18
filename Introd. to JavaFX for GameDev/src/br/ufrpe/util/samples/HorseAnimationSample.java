@@ -32,7 +32,6 @@ public class HorseAnimationSample extends Application {
         final ImageView imageView = new ImageView(IMAGE);
         imageView.setViewport(new Rectangle2D(OFFSET_X, OFFSET_Y, FRAME_WIDTH, FRAME_HEIGHT));
 
-        long startTime = System.currentTimeMillis();
         final Animation animation = new SpriteAnimation(
                 imageView, Duration.millis(1000), COUNT, COLUMNS, OFFSET_X, OFFSET_Y,
                 FRAME_WIDTH, FRAME_HEIGHT);;
@@ -44,20 +43,5 @@ public class HorseAnimationSample extends Application {
         }).start();
         primaryStage.setScene(new Scene(new Group(imageView)));
         primaryStage.show();
-        
-        
-        new Thread (new Runnable() {
-            public void run() {
-                boolean waiting = true;
-                while(waiting) {
-                    long passedTime = System.currentTimeMillis() - startTime ;
-                    if (passedTime > 4000) {
-                        waiting = false;
-                        animation.stop();
-                    } 
-                }
-            }
-        }).start();
-        
     }
 }
