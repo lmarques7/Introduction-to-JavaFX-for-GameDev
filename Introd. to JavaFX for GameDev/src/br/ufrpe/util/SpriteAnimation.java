@@ -13,8 +13,8 @@ public class SpriteAnimation extends Transition {
     private final ImageView imageView;
     private final int count;
     private final int columns;
-    private final int offsetX;
-    private final int offsetY;
+    private int offsetX;
+    private int offsetY;
     private final int frameWidth;
     private final int frameHeight;
 
@@ -85,4 +85,22 @@ public class SpriteAnimation extends Transition {
     public double getSpriteY() {
         return this.imageView.getY();
     }
+
+    public int getFrameWidth() {
+        return frameWidth;
+    }
+
+    public int getFrameHeight() {
+        return frameHeight;
+    }
+
+    public void setOffsetX(int offsetX) {
+        this.offsetX = offsetX;
+    }
+
+    public void setOffsetY(int offsetY) {
+        this.offsetY = offsetY;
+    }
+    
+    
 }

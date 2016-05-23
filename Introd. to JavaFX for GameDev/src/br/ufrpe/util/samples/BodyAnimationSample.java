@@ -16,16 +16,14 @@ public class BodyAnimationSample extends Application implements EventHandler<Key
 
     private static final int COLUMNS  =   9;
     private static final int COUNT    =   9;
-    private static final int OFFSET_X =  0;
-    private static final int OFFSET_Y =  0;
     private static final int FRAME_WIDTH    = 64;
-    private static final int FRAME_HEIGHT   = 60;
+    private static final int FRAME_HEIGHT   = 64;
     
     private final SpriteAnimation animation;
     
     public BodyAnimationSample() {
-        animation = new SpriteAnimation("body.png", Duration.millis(1000), 
-                COUNT, COLUMNS, OFFSET_X, OFFSET_Y, FRAME_WIDTH, FRAME_HEIGHT);
+        animation = new SpriteAnimation("body_full.png", Duration.millis(1000), 
+                COUNT, COLUMNS, 0, FRAME_HEIGHT*3, FRAME_WIDTH, FRAME_HEIGHT);
         animation.setCycleCount(Animation.INDEFINITE);
     }
 
@@ -41,6 +39,9 @@ public class BodyAnimationSample extends Application implements EventHandler<Key
         Group root = new Group(canvas);
         root.getChildren().add(animation.getImageView());
         animation.getImageView().setY(100);
+        animation.getImageView().setX(100);
+        animation.getImageView().setScaleX(3);
+        animation.getImageView().setScaleY(3);
         Scene mainScene = new Scene(root);
         mainScene.setOnKeyPressed(this);
         primaryStage.setScene(mainScene);
@@ -52,7 +53,17 @@ public class BodyAnimationSample extends Application implements EventHandler<Key
     @Override
     public void handle(KeyEvent event) {
         if (event.getCode().equals(KeyCode.RIGHT)) {
-            animation.setSpriteX(animation.getSpriteX() + 1);
+            animation.setOffsetY(FRAME_HEIGHT * 3);
+            animation.setSpriteX(animation.getSpriteX() + 3);
+        } else if (event.getCode().equals(KeyCode.LEFT)) {
+            animation.setOffsetY(FRAME_HEIGHT);
+            animation.setSpriteX(animation.getSpriteX() - 3);
+        } else if (event.getCode().equals(KeyCode.UP)) {
+            animation.setOffsetY(0);
+            animation.setSpriteY(animation.getSpriteY() - 3);
+        } else if (event.getCode().equals(KeyCode.DOWN)) {
+            animation.setOffsetY(FRAME_HEIGHT * 2);
+            animation.setSpriteY(animation.getSpriteY() + 3);
         }
     }
 }
